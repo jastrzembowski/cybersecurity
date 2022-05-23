@@ -4,6 +4,9 @@ import build from "../images/Icons/build.svg";
 import data from "../images/Icons/data.svg";
 import net from "../images/Icons/net.svg";
 import tent from "../images/Icons/tent.svg";
+import Slide from "react-reveal/Slide";
+import Fade from "react-reveal/Fade";
+
 
 export default function Path() {
   const [isTentExpanded, setTentExpanded] = useState(false);
@@ -16,6 +19,7 @@ export default function Path() {
     <>
       <div className="arrows-pc">
         <div className="arrow-container">
+          <Fade top duration={2000}>
           <div className="arrow-box">
             <div className="line"></div>
             <div className="circles">
@@ -35,8 +39,9 @@ export default function Path() {
                 <img src={board} alt="board" className="icon"></img>
               </div>
             </div>
-          </div>
+          </div></Fade>
           <div className="arrows-text">
+            <Slide bottom cascade duration={2500}>
             <div>
               <h1>Pentests von Anwendungen und Betriebssystemen</h1>
               <span>
@@ -96,159 +101,173 @@ export default function Path() {
                 <br /> Bei Interesse kann außerdem ein Awarenesskonzept für das
                 Unternehmen entwickelt werden.
               </span>
-            </div>
+            </div></Slide>
           </div>
         </div>
       </div>
 
       <div className="arrows-mobile">
-        <div className="arrows-mobile__container">
-          <div
-            onClick={
-              isTentExpanded
-                ? (e) => setTentExpanded(false)
-                : (e) => setTentExpanded(true)
-            }
-          >
-            <h1 className="tent" style={{ marginTop: "0px" }}>
-              Pentests von Anwendungen und Betriebssystemen
-            </h1>
-            {!isTentExpanded && (
-              <>
-                <span>
-                  Pentests bieten die Möglichkeit eines organisierten,
-                  gezielten...
-                </span>
-                <span className="mehr-button">
-                  <b>Mehr</b>
-                </span>
-              </>
-            )}
-            {isTentExpanded && (
-              <span>
-                Pentests bieten die Möglichkeit eines organisierten, gezielten
-                Angriffsversuchs auf IT-Systeme um Schwachstellen aufzudecken.
-                Ziel ist es das IT-Sicherheitsniveau dadurch langfristig zu
-                erhöhen. Hierbei existieren verschiedene Varianten: <br />- Mit
-                um umfangreiches Wissen der Infrastrukur und Zugriff auf
-                Dokumente und Quellcode (White Box). <br />- Mit nur für den
-                Angriff notwendigen Informationen und ohne Zugriff auf interne
-                Ressourcen (Grey Box) <br />- Ohne jegliche Information mit
-                realitätstreuen Mitteln und Methoden (Black Box)
-              </span>
-            )}
-          </div>
-          <div
-            onClick={
-              isNetExpanded
-                ? (e) => setNetExpanded(false)
-                : (e) => setNetExpanded(true)
-            }
-          >
-            <h1 className="net">Überprüfung von Netzwerken</h1>
-            {!isNetExpanded && (
-              <>
-                <span>
-                  Überprüft werden unter anderem wie die Netzwerkstruktur
-                  aufgebaut...
-                </span>
-                <span className="mehr-button">
-                  <solid>Mehr</solid>
-                </span>
-              </>
-            )}
+        <Slide bottom>
+          <div className="arrows-mobile__container">
+              <div
+                onClick={
+                  isTentExpanded
+                    ? (e) => setTentExpanded(false)
+                    : (e) => setTentExpanded(true)
+                }
+              >
+                <h1 className="tent" style={{ marginTop: "0px" }}>
+                  Pentests von Anwendungen und Betriebssystemen
+                </h1>
+                {!isTentExpanded && (
+                  <>
+                    <span>
+                      Pentests bieten die Möglichkeit eines organisierten,
+                      gezielten...
+                    </span>
+                    <span className="mehr-button">
+                      <b>Mehr</b>
+                    </span>
+                  </>
+                )}
+                {isTentExpanded && (
+                  <span>
+                    Pentests bieten die Möglichkeit eines organisierten,
+                    gezielten Angriffsversuchs auf IT-Systeme um Schwachstellen
+                    aufzudecken. Ziel ist es das IT-Sicherheitsniveau dadurch
+                    langfristig zu erhöhen. Hierbei existieren verschiedene
+                    Varianten: <br />- Mit um umfangreiches Wissen der
+                    Infrastrukur und Zugriff auf Dokumente und Quellcode (White
+                    Box). <br />- Mit nur für den Angriff notwendigen
+                    Informationen und ohne Zugriff auf interne Ressourcen (Grey
+                    Box) <br />- Ohne jegliche Information mit realitätstreuen
+                    Mitteln und Methoden (Black Box)
+                  </span>
+                )}
+              </div>
+            <Slide bottom>
+              <div
+                onClick={
+                  isNetExpanded
+                    ? (e) => setNetExpanded(false)
+                    : (e) => setNetExpanded(true)
+                }
+              >
+                <h1 className="net">Überprüfung von Netzwerken</h1>
+                {!isNetExpanded && (
+                  <>
+                    <span>
+                      Überprüft werden unter anderem wie die Netzwerkstruktur
+                      aufgebaut...
+                    </span>
+                    <span className="mehr-button">
+                      <solid>Mehr</solid>
+                    </span>
+                  </>
+                )}
 
-            {isNetExpanded && (
-              <span>
-                Überprüft werden unter anderem wie die Netzwerkstruktur
-                aufgebaut ist, ob es entsprechende Dokumentationen dazu gibt und
-                wie beispielsweise die Rechte- und Zugriffsstrukturen sind. Dies
-                sind nur einige wichtige Punkte die zu einem sichern Netzwerk
-                beitragen.
-              </span>
-            )}
+                {isNetExpanded && (
+                  <span>
+                    Überprüft werden unter anderem wie die Netzwerkstruktur
+                    aufgebaut ist, ob es entsprechende Dokumentationen dazu gibt
+                    und wie beispielsweise die Rechte- und Zugriffsstrukturen
+                    sind. Dies sind nur einige wichtige Punkte die zu einem
+                    sichern Netzwerk beitragen.
+                  </span>
+                )}
+              </div>
+            </Slide>{" "}
+            <Slide bottom>
+              <div
+                onClick={
+                  isBuildExpanded
+                    ? (e) => setBuildExpanded(false)
+                    : (e) => setBuildExpanded(true)
+                }
+              >
+                <h1 className="build">Gebäudesicherheit / Gebäudeautomation</h1>
+                {!isBuildExpanded && (
+                  <>
+                    <span>
+                      Cybersicherheit beginnt in der physischen Welt. Jeder
+                      Server ist nur so...
+                    </span>
+                    <span className="mehr-button">
+                      <solid>Mehr</solid>
+                    </span>
+                  </>
+                )}
+                {isBuildExpanded && (
+                  <span>
+                    Cybersicherheit beginnt in der physischen Welt. Jeder Server
+                    ist nur so sicher wie das Gebäude in dem er steht. Welche
+                    Zugänge hat das Gebäude? Werden nicht bekannte Menschen im
+                    Gebäude angesprochen wer Sie sind und was Sie möchten? Gibt
+                    es für den Gebäudezutritt Keykarten, Token oder
+                    Zahlenfelder? Dies sind nur einige der zu beachtenden
+                    Aspekte.
+                  </span>
+                )}
+              </div>{" "}
+            </Slide>{" "}
+            <Slide bottom>
+              <div
+                onClick={
+                  isDataExpanded
+                    ? (e) => setDataExpanded(false)
+                    : (e) => setDataExpanded(true)
+                }
+              >
+                <h1 className="data">Datensicherung und Wiederherstellung</h1>
+                {!isDataExpanded && (
+                  <>
+                    <span>
+                      Backups zu erstellen ist wichtig, doch wie diese sicher
+                      aufbewahrt...
+                    </span>
+                    <span className="mehr-button">
+                      <solid>Mehr</solid>
+                    </span>
+                  </>
+                )}
+                {isDataExpanded && (
+                  <span>
+                    Backups zu erstellen ist wichtig, doch wie diese sicher
+                    aufbewahrt werden können ist ebenso bedeutend. Dies zu
+                    prüfen fällt in den Bereich der Datensicherung und
+                    Wiederherstellung. Es wird ebenfalls geprüft wie die
+                    Datensicherung im Unternehmen durchgeführt wird und ob
+                    beispielsweise Vorgaben zu Testwiederherstellungen der
+                    Backups bestehen.
+                  </span>
+                )}
+              </div>{" "}
+            </Slide>{" "}
+            <Slide bottom>
+              <div
+                style={{ marginBottom: "0px" }}
+                onClick={
+                  isBoardExpanded
+                    ? (e) => setBoardExpanded(false)
+                    : (e) => setBoardExpanded(true)
+                }
+              >
+                <h1 className="board">Mitarbeiterschulung</h1>
+                {!isBoardExpanded && (
+                  <>
+                    <span>
+                      Mitarbeiterschulung sollen ein Problembewusstsein und...
+                    </span>
+                    <span className="mehr-button">
+                      <solid>Mehr</solid>
+                    </span>
+                  </>
+                )}
+              </div>
+            </Slide>
           </div>
-          <div
-            onClick={
-              isBuildExpanded
-                ? (e) => setBuildExpanded(false)
-                : (e) => setBuildExpanded(true)
-            }
-          >
-            <h1 className="build">Gebäudesicherheit / Gebäudeautomation</h1>
-            {!isBuildExpanded && (
-              <>
-                <span>
-                  Cybersicherheit beginnt in der physischen Welt. Jeder Server
-                  ist nur so...
-                </span>
-                <span className="mehr-button">
-                  <solid>Mehr</solid>
-                </span>
-              </>
-            )}
-            {isBuildExpanded && (
-              <span>
-                Cybersicherheit beginnt in der physischen Welt. Jeder Server ist
-                nur so sicher wie das Gebäude in dem er steht. Welche Zugänge
-                hat das Gebäude? Werden nicht bekannte Menschen im Gebäude
-                angesprochen wer Sie sind und was Sie möchten? Gibt es für den
-                Gebäudezutritt Keykarten, Token oder Zahlenfelder? Dies sind nur
-                einige der zu beachtenden Aspekte.
-              </span>
-            )}
-          </div>
-          <div
-            onClick={
-              isDataExpanded
-                ? (e) => setDataExpanded(false)
-                : (e) => setDataExpanded(true)
-            }
-          >
-            <h1 className="data">Datensicherung und Wiederherstellung</h1>
-            {!isDataExpanded && (
-              <>
-                <span>
-                  Backups zu erstellen ist wichtig, doch wie diese sicher
-                  aufbewahrt...
-                </span>
-                <span className="mehr-button">
-                  <solid>Mehr</solid>
-                </span>
-              </>
-            )}
-            {isDataExpanded && (
-              <span>
-                Backups zu erstellen ist wichtig, doch wie diese sicher
-                aufbewahrt werden können ist ebenso bedeutend. Dies zu prüfen
-                fällt in den Bereich der Datensicherung und Wiederherstellung.
-                Es wird ebenfalls geprüft wie die Datensicherung im Unternehmen
-                durchgeführt wird und ob beispielsweise Vorgaben zu
-                Testwiederherstellungen der Backups bestehen.
-              </span>
-            )}
-          </div>
-          <div
-            style={{ marginBottom: "0px" }}
-            onClick={
-              isBoardExpanded
-                ? (e) => setBoardExpanded(false)
-                : (e) => setBoardExpanded(true)
-            }
-          >
-            <h1 className="board">Mitarbeiterschulung</h1>
-            {!isBoardExpanded && (
-              <>
-                <span>
-                  Mitarbeiterschulung sollen ein Problembewusstsein und...
-                </span>
-                <span className="mehr-button">
-                  <solid>Mehr</solid>
-                </span>
-              </>
-            )}
-          </div>
-        </div>
+        </Slide>
+
         {isBoardExpanded && (
           <span
             className="expanded-text-mobile"

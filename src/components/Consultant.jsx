@@ -1,6 +1,5 @@
 import React from "react";
 import werner_2 from "../images/Images/werner_2.png";
-import Rechteck8882 from "../images/Background_grad/Rechteck8882.png";
 
 export default function consultant() {
   function unCheck() {
@@ -8,8 +7,7 @@ export default function consultant() {
       }
   return (
     <div className="consultant" onClick={(e) => unCheck()}>
-      <img src={Rechteck8882} alt="bg1" className="partner-bg1"></img>
-
+    
       <div className="consultant-box">
         <h1>Ihr Consultant</h1>
         <p>
@@ -26,11 +24,12 @@ export default function consultant() {
           passende Konzept und Angebot für Sie parat. Zögern Sie nicht uns
           direkt und unverbindlich anzusprechen!
         </p>
-        <div className="main-button nav-img">
-          <p><a href="mailto: office@wetog.de">Kontakt</a></p>
-        </div>
+        <a href="mailto: office@wetog.de"><div className="main-button nav-img">
+          <p>Kontakt</p>
+        </div></a>
       </div>
       <img src={werner_2} alt="Krause Werner" className="consultant-img" />
+
     </div>
   );
 }

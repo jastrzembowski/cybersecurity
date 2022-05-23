@@ -12,6 +12,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
     <Nav />
+    
     <Routes>
       <Route path="/" exact element={<App />} />
       <Route path="/consultant" element={<Consultant />} />

@@ -4,8 +4,10 @@
 
 * {
   font-family: soleil, sans-serif;
+  transition: all 0.3s ease, background-position 1ms;
+
 }
-a{
+a {
   text-decoration: none;
   color: white;
 }
@@ -108,9 +110,8 @@ nav .menu-btn {
 .dropdown-item {
   cursor: pointer;
   transition: all 0.2s;
-
 }
-.dropdown-item span{
+.dropdown-item span {
   text-decoration: none;
 }
 .dropdown-content {
@@ -283,10 +284,10 @@ nav .menu-btn {
 .icon {
   width: 61px;
 }
-.arrows-mobile{
+.arrows-mobile {
   display: none;
 }
-.arrows-mobile__container{
+.arrows-mobile__container {
   display: none;
 }
 .arrows-text {
@@ -356,7 +357,7 @@ nav .menu-btn {
   height: fit-content;
   margin-bottom: 100px;
 }
-.box p{
+.box p {
   margin-left: 42px;
 }
 .kost-box__holder {
@@ -384,7 +385,9 @@ nav .menu-btn {
 }
 
 .box > :last-child,
-.kost-box > :last-child {
+.kost-box > :last-child,
+.box > a,
+.kost-box > a {
   text-align: center;
   background-image: linear-gradient(to right, #fa4e0f, #ff9d0e);
   height: 39px;
@@ -393,7 +396,10 @@ nav .menu-btn {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
-
+.box a,
+.kost-box a {
+  padding: 5px 24%;
+}
 .box > p::before,
 .vorort-text > p:before {
   display: inline-block;
@@ -425,32 +431,22 @@ footer {
 }
 
 .consultant {
-  position: relative;
-  height: 80vh;
+  background-image: url(images/Background_grad/bg3.png);
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  display: flex;
+  flex-direction: row;
+  height: 91vh;
 }
-
 .consultant-box {
-  width: 50%;
-  margin: 100px;
+  width: 55%;
+  margin: 2.5%;
 }
-
-.consultant-box > * {
-  z-index: 3;
-  position: relative;
-}
-
-.consultant-box h1 {
-  font-family: "Gentium Basic", serif;
-  font-size: 35px;
-}
-
 .consultant-img {
-  position: absolute;
-  bottom: 0px;
-  right: 15%;
-  z-index: 1;
-  width: 18%;
-  min-width: 280px;
+  width: 25%;
+  height: max-content;
+  margin-top: auto;
 }
 
 .partner-bg1 {
@@ -656,7 +652,7 @@ footer li::before {
     justify-content: space-between;
   }
   .about-box {
-    width: 70%;
+    width: 65%;
     margin-top: 35px;
     margin-left: 20px;
     line-height: 21px;
@@ -685,7 +681,8 @@ footer li::before {
     margin-top: 10px;
     margin-bottom: 10px;
   }
-  .box > h2 {
+  .box > h2,
+  .box > a {
     font-size: 20px;
     margin: 0px;
   }
@@ -708,7 +705,8 @@ footer li::before {
     font-size: 20px;
   }
 
-  .kost-box > h2 {
+  .kost-box > h2,
+  .kost-box > a {
     font-size: 20px;
   }
 
@@ -784,7 +782,6 @@ footer li::before {
     display: none;
   }
   .arrows-mobile {
-
     margin-top: 250px;
     width: 100%;
     display: flex;
@@ -805,7 +802,7 @@ footer li::before {
     display: flex;
     flex-direction: column;
   }
-  .expanded-text-mobile{
+  .expanded-text-mobile {
     width: 65%;
     text-align: left;
     padding-left: 55px;
@@ -888,25 +885,16 @@ footer li::before {
     margin-left: 7px;
     transform: rotate(90deg);
   }
-
-  .consultant{
-    height: 100vh;
+  .consultant {
+    flex-direction: column;
+    height: auto;
+    background-size: 290px;
   }
-  .consultant-box{
-    width: 85%;
-    margin: 50px 15% auto 20px;
+  .consultant-box {
+    width: 90%;
   }
-  .consultant-img{
-    min-width: 150px;
-    right: 0;
-  }
-  .partner-bg1{
-    width: 120%;
-  }
-  .consultant-box p {
-    font-size: 15px;
-  }
-  .cyber{
-    height: 120vh;
+  .consultant-img {
+    width: 200px;
+    align-self: flex-end;
   }
 }
