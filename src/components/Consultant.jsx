@@ -1,12 +1,12 @@
 import React from "react";
 import werner_2 from "../images/Images/werner_2.png";
-
+import FootPartner from "./FootPartner";
 export default function consultant() {
   function unCheck() {
     document.getElementById("menu-btn").checked = false;
       }
   return (
-    <div className="consultant" onClick={(e) => unCheck()}>
+    <>    <div className="consultant" onClick={(e) => unCheck()}>
     
       <div className="consultant-box">
         <h1>Ihr Consultant</h1>
@@ -31,5 +31,8 @@ export default function consultant() {
       <img src={werner_2} alt="Krause Werner" className="consultant-img" />
 
     </div>
+    <FootPartner/>
+    </>
+
   );
 }

@@ -4,8 +4,7 @@
 
 * {
   font-family: soleil, sans-serif;
-  transition: all 0.3s ease, background-position 1ms;
-
+  scroll-behavior: smooth;
 }
 a {
   text-decoration: none;
@@ -169,13 +168,27 @@ nav .menu-btn {
 .main-bg3 {
   width: 70%;
   position: absolute;
-  top: 2241px;
+  top: 1841px;
   left: -20px;
   z-index: -1;
+}
+.bg3-hid{
+  width: 40%;
+  position: absolute;
+  top: 1500px;
+  left: 0;
 }
 
 .main-bg2 {
   width: 100%;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.bg2-hid{
+  width: 50%;
   bottom: 0;
   right: 0;
   position: absolute;
@@ -189,7 +202,7 @@ nav .menu-btn {
 .about-box {
   width: 45%;
   text-align: left;
-  margin-top: 314px;
+  margin-top: 224px;
   margin-left: 80px;
 }
 
@@ -221,20 +234,31 @@ nav .menu-btn {
 
 .illustration3 {
   position: absolute;
-  top: 2600px;
+  top: 2000px;
   left: 5%;
   z-index: 0;
   width: 20%;
 }
+.ill3-hid{
+  position: absolute;
+  top: 2700px;
+  left: 5%;
+  z-index: 0;
+  width: 20%;
 
+}
 .main-button {
   text-align: center;
   margin-top: 43px;
   float: right;
+  cursor: pointer;
 }
-
+.reaktion {
+  color: #001f46;
+  text-decoration: underline;
+}
 .reaction-box {
-  margin-top: 452px;
+  margin-top: 152px;
   margin-left: 80px;
   text-align: left;
   width: 728px;
@@ -254,9 +278,12 @@ nav .menu-btn {
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  margin-top: 300px;
+  margin-top: 500px;
 }
-
+.arrows-hid {
+  position: relative;
+  transform: translate(-25%, 0px);
+}
 .circle {
   border-radius: 50%;
   background-image: linear-gradient(to right, #2292a4, #ffffff);
@@ -291,7 +318,7 @@ nav .menu-btn {
   display: none;
 }
 .arrows-text {
-  width: 65%;
+  width: 60%;
   text-align: left;
   display: flex;
   flex-direction: column;
@@ -322,7 +349,7 @@ nav .menu-btn {
 }
 
 .arrows-text > * {
-  padding-right: 150px;
+  padding-right: 200px;
 }
 
 .boxes-holder {
@@ -364,6 +391,7 @@ nav .menu-btn {
   display: flex;
   width: 100%;
   justify-content: center;
+  margin-bottom: 250px;
 }
 
 .kost-box {
@@ -427,7 +455,12 @@ footer {
   margin-left: 80px;
   border-top: 2px solid #fa4e0f;
   height: 80px;
-  margin-top: 250px;
+}
+.foot-partner {
+  width: 100%;
+  margin: 0px;
+  border-top: 2px solid #fa4e0f;
+  height: 80px;
 }
 
 .consultant {
@@ -493,12 +526,22 @@ footer li::before {
   .illustration3 {
     display: none;
   }
+  .ill3-hid{
+    display: none;
+  }
 
   .main-bg3 {
     display: none;
   }
+  
+  .bg3-hid{
+    display: none;
+  }
 
   .main-bg2 {
+    display: none;
+  }
+  .bg2-hid{
     display: none;
   }
 

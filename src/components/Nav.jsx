@@ -20,14 +20,18 @@ export default function Nav() {
         </label>
         <ul className="menu nav-container">
           <li>
-          
-            <Link to="/" onClick={(e) => unCheck()} style={{color: "black"}}>
+            <a
+              href="#offers"
+              onClick={(e) => unCheck()}
+              style={{ color: "black" }}
+            >
               Angebote
-            </Link>
+            </a>
           </li>
           <li
             className={isActive ? "dropdown-active" : "dropdown"}
-            onClick={(e) => setIsActive(!isActive)}
+            onMouseOver={(e) => setIsActive(!isActive)}
+            onmouseleave="unCheck()"
           >
             Partner
           </li>
@@ -35,6 +39,7 @@ export default function Nav() {
             <div
               className="dropdown-content"
               onClick={(e) => setIsActive(!isActive)}
+              onmouseleave={(e) => unCheck()}
             >
               <Link to="/consultant">
                 {" "}

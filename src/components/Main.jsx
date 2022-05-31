@@ -29,7 +29,7 @@ export default function Main() {
             className="illustration1"
           ></img>
         </Fade>
-        <img src={Rechteck938} alt="bg3" className="main-bg3"></img>
+        <img src={Rechteck938} alt="bg3" className={isHidden? "bg3-hid" : "main-bg3"}></img>
         <Fade top duration={3000}>
           <img
             src={illustration_02}
@@ -37,12 +37,12 @@ export default function Main() {
             className="illustration2"
           ></img>
         </Fade>
-        <img src={Rechteck891} alt="bg2" className="main-bg2"></img>
+        <img src={Rechteck891} alt="bg2" className={isHidden? "bg2-hid" : "main-bg2"}></img>
         <Fade top duration={3000}>
           <img
             src={illustration_03}
             alt="illustration"
-            className="illustration3"
+            className={isHidden? "ill3-hid" : "illustration3"}
           ></img>
         </Fade>
         <div className="about-box">
@@ -62,11 +62,9 @@ export default function Main() {
             der Marke, sondern auch massive Geldstrafen die staatliche
             Institutionen aufgrund der DSGVO verhängen.
           </span>
-          <a href="mailto: office@wetog.de">
-            <div className="main-button nav-img">
+          {isHidden && (     <div className="main-button nav-img"   onClick={(e) => setIsHidden(!isHidden)}>
               <p>Learn more</p>
-            </div>
-          </a>
+            </div>)}
           {isHidden && (
             <div
               className="main-button nav-img__small"
@@ -88,7 +86,7 @@ export default function Main() {
               verzeichnen war. Dieser lag 40 Prozent über dem Durchschnittswert
               vom Jahre 2020. Quelle dieser und der folgenden Daten:
               BSI-Auswertung von Rohdaten des Instituts AV-Test GmbH
-              (https://www.bmi.bund.de/SharedDocs/downloads/DE/publikationen/themen/it-digitalpolitik/bsi-lagebericht-cybersicherheit-2021.pdf?__blob=publicationFile&v=3)
+              https://www.bmi.bund.de/SharedDocs/downloads/DE/publikationen/themen/it-digitalpolitik/bsi-lagebericht-cybersicherheit-2021.pdf?__blob=publicationFile&v=3
               <br />
               <br />
               Privatpersonen sind jedoch nicht frei von Gefahren. Der Schutz
@@ -102,8 +100,8 @@ export default function Main() {
             </span>
           )}
         </div>
-
-        <div className="reaction-box">
+        {!isHidden && (
+<>        <div className="reaction-box">
           <h1>Prävention statt Reaktion</h1>
           <span>
             Die größte Bedrohung im Internet sind Cyberangriffe. Es gibt viele
@@ -123,8 +121,8 @@ export default function Main() {
             der höchste jemals gemessene durchschnittliche Tageszuwachs zu
             verzeichnen war. Dieser lag 40 Prozent über dem Durchschnittswert
             vom Jahre 2020. Quelle dieser und der folgenden Daten:
-            BSI-Auswertung von Rohdaten des Instituts AV-Test GmbH
-            (https://www.bmi.bund.de/SharedDocs/downloads/DE/publikationen/themen/it-digitalpolitik/bsi-lagebericht-cybersicherheit-2021.pdf?__blob=publicationFile&v=3)
+            <a className="reaktion" href="https://www.bmi.bund.de/SharedDocs/downloads/DE/publikationen/themen/it-digitalpolitik/bsi-lagebericht-cybersicherheit-2021.pdf?__blob=publicationFile&v=3" > BSI-Auswertung von Rohdaten des Instituts AV-Test GmbH</a>
+            
             <br />
             <br />
             Privatpersonen sind jedoch nicht frei von Gefahren. Der Schutz
@@ -138,11 +136,15 @@ export default function Main() {
           </span>
           <a href="https://www.bmi.bund.de/SharedDocs/downloads/DE/publikationen/themen/it-digitalpolitik/bsi-lagebericht-cybersicherheit-2021.pdf?__blob=publicationFile&v=3">
             <div className="main-button react-img">
-              <p>Download 10 Schritte pdf</p>
+              <a href="https://wetog-cybersecurity.com/downloads/10-GER.pdf">Download 10 Schritte pdf</a>
             </div>
           </a>
+       
         </div>
-        <Path />
+        </>
+
+)}
+        <Path isHidden={isHidden} />
         <Offers />
       </div>
     </>

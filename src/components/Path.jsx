@@ -8,16 +8,15 @@ import Slide from "react-reveal/Slide";
 import Fade from "react-reveal/Fade";
 
 
-export default function Path() {
+export default function Path(props) {
   const [isTentExpanded, setTentExpanded] = useState(false);
   const [isNetExpanded, setNetExpanded] = useState(false);
   const [isBuildExpanded, setBuildExpanded] = useState(false);
   const [isDataExpanded, setDataExpanded] = useState(false);
   const [isBoardExpanded, setBoardExpanded] = useState(false);
-
   return (
     <>
-      <div className="arrows-pc">
+      <div className= {props.isHidden ? "arrows-pc arrows-hid" : "arrows-pc"}>
         <div className="arrow-container">
           <Fade top duration={2000}>
           <div className="arrow-box">

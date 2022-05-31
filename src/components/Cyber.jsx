@@ -1,11 +1,13 @@
 import React from "react";
 import arndt from "../images/Images/arndt.png";
+import FootPartner from "./FootPartner";
 
 export default function consultant() {
   function unCheck() {
     document.getElementById("menu-btn").checked = false;
       }
   return (
+    <>
     <div className="consultant" onClick={(e) => unCheck()}>
       <div className="consultant-box ">
         <h1>CyberSchutz-Versicherung der ALLIANZ</h1>
@@ -34,5 +36,7 @@ export default function consultant() {
       </div>
       <img src={arndt} alt="Arndt Köhler" className="consultant-img" />
     </div>
+    <FootPartner/>
+    </>
   );
 }

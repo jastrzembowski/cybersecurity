@@ -105,7 +105,7 @@ export default function Offers() {
             </p>
             <p>
               <strong>
-                <a href="mailto: office@wetog.de">Jetzt vereinbaren</a>
+                <a href="mailto: office@wetog.de">Termin vereinbaren</a>
               </strong>
             </p>
           </div>
