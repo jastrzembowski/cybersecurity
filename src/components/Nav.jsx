@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import logo from "../images/Images/logo.png";
 import { Link } from "react-router-dom";
 
 export default function Nav() {
   const [isActive, setIsActive] = useState(false);
-
+  const { t } = useTranslation();
   function unCheck() {
     document.getElementById("menu-btn").checked = false;
   }
@@ -21,11 +22,11 @@ export default function Nav() {
         <ul className="menu nav-container">
           <li>
             <a
-              href="#offers"
+              href="/#offers"
               onClick={(e) => unCheck()}
               style={{ color: "black" }}
             >
-              Angebote
+              {t("offers")}
             </a>
           </li>
           <li
@@ -50,19 +51,19 @@ export default function Nav() {
               <Link to="/cyberversicherung">
                 {" "}
                 <div className="dropdown-item" onClick={(e) => unCheck()}>
-                  <span>Cyberversicherung</span>
+                  <span>{t("cyber")}</span>
                 </div>
               </Link>
             </div>
           )}
           <li>
             <a href="mailto: office@wetog.de" style={{ color: "black" }}>
-              Kontakt
+              {t("kontakt")}
             </a>
           </li>
           <a href="mailto: office@wetog.de">
             <div className="nav-img">
-              <p>Buchen</p>
+              <p>{t("buchen")}</p>
             </div>
           </a>
         </ul>

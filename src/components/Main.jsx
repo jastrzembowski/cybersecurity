@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import Rechteck888 from "../images/Background_grad/Rechteck888.png";
 import Rechteck891 from "../images/Background_grad/Rechteck891.png";
 import Rechteck938 from "../images/Background_grad/Rechteck938.png";
@@ -15,6 +16,7 @@ export default function Main() {
   function unCheck() {
     document.getElementById("menu-btn").checked = false;
   }
+  const { t } = useTranslation();
 
   return (
     <>
@@ -29,7 +31,11 @@ export default function Main() {
             className="illustration1"
           ></img>
         </Fade>
-        <img src={Rechteck938} alt="bg3" className={isHidden? "bg3-hid" : "main-bg3"}></img>
+        <img
+          src={Rechteck938}
+          alt="bg3"
+          className={isHidden ? "bg3-hid" : "main-bg3"}
+        ></img>
         <Fade top duration={3000}>
           <img
             src={illustration_02}
@@ -37,41 +43,41 @@ export default function Main() {
             className="illustration2"
           ></img>
         </Fade>
-        <img src={Rechteck891} alt="bg2" className={isHidden? "bg2-hid" : "main-bg2"}></img>
+        <img
+          src={Rechteck891}
+          alt="bg2"
+          className={isHidden ? "bg2-hid" : "main-bg2"}
+        ></img>
         <Fade top duration={3000}>
           <img
             src={illustration_03}
             alt="illustration"
-            className={isHidden? "ill3-hid" : "illustration3"}
+            className={isHidden ? "ill3-hid" : "illustration3"}
           ></img>
         </Fade>
         <div className="about-box">
-          <h1>Wer sollte sich um Cybersicherheit kümmern?</h1>
+          <h1>{t("about-title")}</h1>
           <span>
-            Diese Frage ist einfach zu beantworten: Jeder der sich sicher fühlen
-            möchte.
+            {t("about-text-1")}
             <br />
             <br />
-            Die größte Bedrohung im Internet sind Cyberangriffe. Es gibt viele
-            Arten von ihnen, aber jede ist darauf ausgelegt wertvolle
-            Informationen zu erfassen, die es Hackern ermöglichen Geld zu
-            stehlen oder ihre Opfer um Lösegeld zu erpressen. Anbieter digitaler
-            Dienste und Unternehmen die im Internetbereich tätig sind, sind
-            Cyberangriffen am stärksten ausgesetzt. Die Folge von Cyberangriffen
-            ist nicht nur der Vertrauensverlust von Kunden und Geschäftspartnern
-            der Marke, sondern auch massive Geldstrafen die staatliche
-            Institutionen aufgrund der DSGVO verhängen.
+            {t("about-text-2")}
           </span>
-          {isHidden && (     <div className="main-button nav-img"   onClick={(e) => setIsHidden(!isHidden)}>
+          {isHidden && (
+            <div
+              className="main-button nav-img"
+              onClick={(e) => setIsHidden(!isHidden)}
+            >
               <p>Learn more</p>
-            </div>)}
+            </div>
+          )}
           {isHidden && (
             <div
               className="main-button nav-img__small"
               onClick={(e) => setIsHidden(!isHidden)}
             >
               <span>
-                <strong>Mehr Erfahren</strong>
+                <strong>{t("learn-more")}</strong>
               </span>
             </div>
           )}
@@ -79,71 +85,42 @@ export default function Main() {
             <span className="small-text-box">
               <br />
               <br />
-              Um den Jahreswechsel (2020/2021) haben Angreifer die Produktion
-              neuer Schadprogramm-Varianten deutlich beschleunigt, sodass im
-              Februar 2021 mit durchschnittlich 553.000 neuen Varianten pro Tag
-              der höchste jemals gemessene durchschnittliche Tageszuwachs zu
-              verzeichnen war. Dieser lag 40 Prozent über dem Durchschnittswert
-              vom Jahre 2020. Quelle dieser und der folgenden Daten:
-              BSI-Auswertung von Rohdaten des Instituts AV-Test GmbH
-              https://www.bmi.bund.de/SharedDocs/downloads/DE/publikationen/themen/it-digitalpolitik/bsi-lagebericht-cybersicherheit-2021.pdf?__blob=publicationFile&v=3
+              {t("small-text-1")}
               <br />
               <br />
-              Privatpersonen sind jedoch nicht frei von Gefahren. Der Schutz
-              personenbezogener Daten ist ein Garant für unsere Privatsphäre im
-              Internet, daher ist es äußerst wichtig bewusst mit diesen
-              Informationen umzugehen und sie wirksam vor dem Eingriff
-              unerwünschter Dritter zu schützen. Das 21. Jahrhundert ist eine
-              weitgehend technikdominierte Realität, dies sollten Sie
-              berücksichtigen und nicht nur in der realen, sondern auch in
-              dieser virtuellen Welt, an Ihre Sicherheit denken.
+              {t("small-text-2")}
             </span>
           )}
         </div>
         {!isHidden && (
-<>        <div className="reaction-box">
-          <h1>Prävention statt Reaktion</h1>
-          <span>
-            Die größte Bedrohung im Internet sind Cyberangriffe. Es gibt viele
-            Arten von ihnen, aber jede ist darauf ausgelegt wertvolle
-            Informationen zu erfassen, die es Hackern ermöglichen Geld zu
-            stehlen oder ihre Opfer um Lösegeld zu erpressen. Anbieter digitaler
-            Dienste und Unternehmen die im Internetbereich tätig sind, sind
-            Cyberangriffen am stärksten ausgesetzt. Die Folge von Cyberangriffen
-            ist nicht nur der Vertrauensverlust von Kunden und Geschäftspartnern
-            der Marke, sondern auch massive Geldstrafen die staatliche
-            Institutionen aufgrund der DSGVO verhängen.
-            <br />
-            <br />
-            Um den Jahreswechsel (2020/2021) haben Angreifer die Produktion
-            neuer Schadprogramm-Varianten deutlich beschleunigt, sodass im
-            Februar 2021 mit durchschnittlich 553.000 neuen Varianten pro Tag
-            der höchste jemals gemessene durchschnittliche Tageszuwachs zu
-            verzeichnen war. Dieser lag 40 Prozent über dem Durchschnittswert
-            vom Jahre 2020. Quelle dieser und der folgenden Daten:
-            <a className="reaktion" href="https://www.bmi.bund.de/SharedDocs/downloads/DE/publikationen/themen/it-digitalpolitik/bsi-lagebericht-cybersicherheit-2021.pdf?__blob=publicationFile&v=3" > BSI-Auswertung von Rohdaten des Instituts AV-Test GmbH</a>
-            
-            <br />
-            <br />
-            Privatpersonen sind jedoch nicht frei von Gefahren. Der Schutz
-            personenbezogener Daten ist ein Garant für unsere Privatsphäre im
-            Internet, daher ist es äußerst wichtig bewusst mit diesen
-            Informationen umzugehen und sie wirksam vor dem Eingriff
-            unerwünschter Dritter zu schützen. Das 21. Jahrhundert ist eine
-            weitgehend technikdominierte Realität, dies sollten Sie
-            berücksichtigen und nicht nur in der realen, sondern auch in dieser
-            virtuellen Welt, an Ihre Sicherheit denken.
-          </span>
-          <a href="https://www.bmi.bund.de/SharedDocs/downloads/DE/publikationen/themen/it-digitalpolitik/bsi-lagebericht-cybersicherheit-2021.pdf?__blob=publicationFile&v=3">
-            <div className="main-button react-img">
-              <a href="https://wetog-cybersecurity.com/downloads/10-GER.pdf">Download 10 Schritte pdf</a>
+          <>
+            <div className="reaction-box">
+              <h1>{t("prevention")}</h1>
+              <span>
+                {t("prev-text-1")}
+                <br />
+                <br />
+                {t("prev-text-2")}
+                <a
+                  className="reaktion"
+                  href="https://www.bmi.bund.de/SharedDocs/downloads/DE/publikationen/themen/it-digitalpolitik/bsi-lagebericht-cybersicherheit-2021.pdf?__blob=publicationFile&v=3"
+                >
+                  {t("ins")}
+                </a>
+                <br />
+                <br />
+                {t("privat")}
+              </span>
+              <a href="https://www.bmi.bund.de/SharedDocs/downloads/DE/publikationen/themen/it-digitalpolitik/bsi-lagebericht-cybersicherheit-2021.pdf?__blob=publicationFile&v=3">
+                <div className="main-button react-img">
+                  <a href="https://wetog-cybersecurity.com/downloads/10-GER.pdf">
+                    {t("download")}{" "}
+                  </a>
+                </div>
+              </a>
             </div>
-          </a>
-       
-        </div>
-        </>
-
-)}
+          </>
+        )}
         <Path isHidden={isHidden} />
         <Offers />
       </div>

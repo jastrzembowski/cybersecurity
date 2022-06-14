@@ -172,7 +172,7 @@ nav .menu-btn {
   left: -20px;
   z-index: -1;
 }
-.bg3-hid{
+.bg3-hid {
   width: 40%;
   position: absolute;
   top: 1500px;
@@ -187,7 +187,7 @@ nav .menu-btn {
   z-index: -1;
 }
 
-.bg2-hid{
+.bg2-hid {
   width: 50%;
   bottom: 0;
   right: 0;
@@ -234,18 +234,17 @@ nav .menu-btn {
 
 .illustration3 {
   position: absolute;
-  top: 2000px;
+  bottom: 100px;
   left: 5%;
   z-index: 0;
   width: 20%;
 }
-.ill3-hid{
+.ill3-hid {
   position: absolute;
-  top: 2700px;
+  bottom: 300px;
   left: 5%;
   z-index: 0;
   width: 20%;
-
 }
 .main-button {
   text-align: center;
@@ -526,22 +525,22 @@ footer li::before {
   .illustration3 {
     display: none;
   }
-  .ill3-hid{
+  .ill3-hid {
     display: none;
   }
 
   .main-bg3 {
     display: none;
   }
-  
-  .bg3-hid{
+
+  .bg3-hid {
     display: none;
   }
 
   .main-bg2 {
     display: none;
   }
-  .bg2-hid{
+  .bg2-hid {
     display: none;
   }
 

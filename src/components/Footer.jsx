@@ -1,15 +1,19 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 
 export default function Footer() {
+
+const {t} = useTranslation()
+
   return (
     <footer>
         <ul>
-          <li>Impressum</li>
-          <li>Datenschutz</li>
-          <li className='foot-pc'>Haftungsausschluss</li>
-          <li className='foot-mobile'>Haftungsausschluss</li>
-          <li className='foot-pc'>Allgemeine Geschäftsbedingungen</li>
-          <li className='foot-mobile'>Allg. Geschäftsbed.</li>
+          <li>{t("impressum")}</li>
+          <li>{t("daten")}</li>
+          <li className='foot-pc'>{t("haft")}</li>
+          <li className='foot-mobile'>{t("haft")}</li>
+          <li className='foot-pc'>{t("allge")}</li>
+          <li className='foot-mobile'>{t("all-mob")}</li>
         </ul>
     </footer>
   )
