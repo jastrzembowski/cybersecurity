@@ -1,11 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import logo from "../images/Images/logo.png";
 import { Link } from "react-router-dom";
+import i18next from "i18next";
+
+
 
 export default function Nav() {
   const [isActive, setIsActive] = useState(false);
-  const { t } = useTranslation();
+  const { i18n, t } = useTranslation();
+
+  useEffect(() => {
+    if (localStorage.getItem("i18nextLng")?.length > 2) {
+      i18next.changeLanguage("en");
+    }
+  }, []);
+
+  const handleLanguageChange = (e) => {
+    i18n.changeLanguage(e.target.value);
+  };
+
   function unCheck() {
     document.getElementById("menu-btn").checked = false;
   }
@@ -16,9 +30,19 @@ export default function Nav() {
           <img src={logo} alt="logo" className="logo"></img>
         </Link>
         <input className="menu-btn" type="checkbox" id="menu-btn" />
+        <div onClick={(e) => unCheck()}>
+        <select
+							className="lng-select-small"
+							value={localStorage.getItem("i18nextLng")}
+							onChange={handleLanguageChange}
+						>
+							<option value="en" >🇬🇧</option>
+              <option value="DE">	🇩🇪</option>
+						</select>
         <label className="menu-icon" for="menu-btn">
           <span className="nav-icon"></span>
         </label>
+        </div>
         <ul className="menu nav-container">
           <li>
             <a
@@ -32,7 +56,7 @@ export default function Nav() {
           <li
             className={isActive ? "dropdown-active" : "dropdown"}
             onMouseOver={(e) => setIsActive(!isActive)}
-            onmouseleave="unCheck()"
+            onMouseLeave={(e) => unCheck()}
           >
             Partner
           </li>
@@ -40,7 +64,7 @@ export default function Nav() {
             <div
               className="dropdown-content"
               onClick={(e) => setIsActive(!isActive)}
-              onmouseleave={(e) => unCheck()}
+              onMouseLeave={(e) => unCheck()}
             >
               <Link to="/consultant">
                 {" "}
@@ -61,11 +85,20 @@ export default function Nav() {
               {t("kontakt")}
             </a>
           </li>
-          <a href="mailto: office@wetog.de">
+      
+          <a href="mailto: office@wetog.de" className="nav-but">
             <div className="nav-img">
               <p>{t("buchen")}</p>
             </div>
           </a>
+          <select
+							className="lng-select"
+							value={localStorage.getItem("i18nextLng")}
+							onChange={handleLanguageChange}
+						>
+							<option value="en" >🇬🇧</option>
+              <option value="DE">	🇩🇪</option>
+						</select>
         </ul>
       </nav>
     </>

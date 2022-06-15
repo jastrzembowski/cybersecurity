@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import board from "../images/Icons/board.svg";
 import build from "../images/Icons/build.svg";
 import data from "../images/Icons/data.svg";
@@ -7,100 +8,76 @@ import tent from "../images/Icons/tent.svg";
 import Slide from "react-reveal/Slide";
 import Fade from "react-reveal/Fade";
 
-
 export default function Path(props) {
   const [isTentExpanded, setTentExpanded] = useState(false);
   const [isNetExpanded, setNetExpanded] = useState(false);
   const [isBuildExpanded, setBuildExpanded] = useState(false);
   const [isDataExpanded, setDataExpanded] = useState(false);
   const [isBoardExpanded, setBoardExpanded] = useState(false);
+  const { t } = useTranslation();
+
   return (
     <>
-      <div className= {props.isHidden ? "arrows-pc arrows-hid" : "arrows-pc"}>
+      <div className={props.isHidden ? "arrows-pc arrows-hid" : "arrows-pc"}>
         <div className="arrow-container">
           <Fade top duration={2000}>
-          <div className="arrow-box">
-            <div className="line"></div>
-            <div className="circles">
-              <div className="circle">
-                <img src={tent} alt="tent" className="icon"></img>
-              </div>
-              <div className="circle">
-                <img src={net} alt="net" className="icon"></img>
-              </div>
-              <div className="circle">
-                <img src={build} alt="build" className="icon"></img>
-              </div>
-              <div className="circle">
-                <img src={data} alt="data" className="icon"></img>
-              </div>
-              <div className="circle">
-                <img src={board} alt="board" className="icon"></img>
+            <div className="arrow-box">
+              <div className="line"></div>
+              <div className="circles">
+                <div className="circle">
+                  <img src={tent} alt="tent" className="icon"></img>
+                </div>
+                <div className="circle">
+                  <img src={net} alt="net" className="icon"></img>
+                </div>
+                <div className="circle">
+                  <img src={build} alt="build" className="icon"></img>
+                </div>
+                <div className="circle">
+                  <img src={data} alt="data" className="icon"></img>
+                </div>
+                <div className="circle">
+                  <img src={board} alt="board" className="icon"></img>
+                </div>
               </div>
             </div>
-          </div></Fade>
+          </Fade>
           <div className="arrows-text">
             <Slide bottom cascade duration={2500}>
-            <div>
-              <h1>Pentests von Anwendungen und Betriebssystemen</h1>
-              <span>
-                Pentests bieten die Möglichkeit eines organisierten, gezielten
-                Angriffsversuchs auf IT-Systeme um Schwachstellen aufzudecken.
-                Ziel ist es das IT-Sicherheitsniveau dadurch langfristig zu
-                erhöhen. Hierbei existieren verschiedene Varianten: <br />- Mit
-                um umfangreiches Wissen der Infrastrukur und Zugriff auf
-                Dokumente und Quellcode (White Box). <br />- Mit nur für den
-                Angriff notwendigen Informationen und ohne Zugriff auf interne
-                Ressourcen (Grey Box) <br />- Ohne jegliche Information mit
-                realitätstreuen Mitteln und Methoden (Black Box)
-              </span>
-            </div>
+              <div>
+                <h1>{t("pentest")}</h1>
+                <span>
+                  {t("pen-text")}
+                  <br />
+                  {t("pen-p1")}
+                  <br />
+                  {t("pen-p2")}
+                  <br />
+                  {t("pen-p3")}
+                </span>
+              </div>
 
-            <div>
-              <h1>Überprüfung von Netzwerken</h1>
-              <span>
-                Überprüft werden unter anderem wie die Netzwerkstruktur
-                aufgebaut ist, ob es entsprechende Dokumentationen dazu gibt und
-                wie beispielsweise die Rechte- und Zugriffsstrukturen sind. Dies
-                sind nur einige wichtige Punkte die zu einem sichern Netzwerk
-                beitragen.
-              </span>
-            </div>
-            <div>
-              <h1>Gebäudesicherheit / Gebäudeautomation</h1>
-              <span>
-                Cybersicherheit beginnt in der physischen Welt. Jeder Server ist
-                nur so sicher wie das Gebäude in dem er steht. Welche Zugänge
-                hat das Gebäude? Werden nicht bekannte Menschen im Gebäude
-                angesprochen wer Sie sind und was Sie möchten? Gibt es für den
-                Gebäudezutritt Keykarten, Token oder Zahlenfelder? Dies sind nur
-                einige der zu beachtenden Aspekte.
-              </span>
-            </div>
-            <div>
-              <h1>Datensicherung und Wiederherstellung</h1>
-              <span>
-                Backups zu erstellen ist wichtig, doch wie diese sicher
-                aufbewahrt werden können ist ebenso bedeutend. Dies zu prüfen
-                fällt in den Bereich der Datensicherung und Wiederherstellung.
-                Es wird ebenfalls geprüft wie die Datensicherung im Unternehmen
-                durchgeführt wird und ob beispielsweise Vorgaben zu
-                Testwiederherstellungen der Backups bestehen.
-              </span>
-            </div>
-            <div>
-              <h1>Mitarbeiterschulung</h1>
-              <span>
-                Mitarbeiterschulung sollen ein Problembewusstsein und
-                entsprechendes Verhalten der Mitarbeiter herstellen. Ein
-                Bewusstsein für Cybersicherheit zu entwickeln ist nur eines der
-                Ziele. Diese können durch Workshops oder Test-Software gut und
-                nachhaltig vermittelt werden.
-                <br />
-                <br /> Bei Interesse kann außerdem ein Awarenesskonzept für das
-                Unternehmen entwickelt werden.
-              </span>
-            </div></Slide>
+              <div>
+                <h1>{t("uber")}</h1>
+                <span>{t("uber-text")}</span>
+              </div>
+              <div>
+                <h1>{t("build")}</h1>
+                <span>{t("build-text")}</span>
+              </div>
+              <div>
+                <h1>{t("datensich")}</h1>
+                <span>{t("daten-text")}</span>
+              </div>
+              <div>
+                <h1>{t("mitarbait")}</h1>
+                <span>
+                  {t("mit-text-1")}
+                  <br />
+                  <br /> {t("mit-text-2")}
+                </span>
+              </div>
+            </Slide>
           </div>
         </div>
       </div>
@@ -108,42 +85,36 @@ export default function Path(props) {
       <div className="arrows-mobile">
         <Slide bottom>
           <div className="arrows-mobile__container">
-              <div
-                onClick={
-                  isTentExpanded
-                    ? (e) => setTentExpanded(false)
-                    : (e) => setTentExpanded(true)
-                }
-              >
-                <h1 className="tent" style={{ marginTop: "0px" }}>
-                  Pentests von Anwendungen und Betriebssystemen
-                </h1>
-                {!isTentExpanded && (
-                  <>
-                    <span>
-                      Pentests bieten die Möglichkeit eines organisierten,
-                      gezielten...
-                    </span>
-                    <span className="mehr-button">
-                      <b>Mehr</b>
-                    </span>
-                  </>
-                )}
-                {isTentExpanded && (
-                  <span>
-                    Pentests bieten die Möglichkeit eines organisierten,
-                    gezielten Angriffsversuchs auf IT-Systeme um Schwachstellen
-                    aufzudecken. Ziel ist es das IT-Sicherheitsniveau dadurch
-                    langfristig zu erhöhen. Hierbei existieren verschiedene
-                    Varianten: <br />- Mit um umfangreiches Wissen der
-                    Infrastrukur und Zugriff auf Dokumente und Quellcode (White
-                    Box). <br />- Mit nur für den Angriff notwendigen
-                    Informationen und ohne Zugriff auf interne Ressourcen (Grey
-                    Box) <br />- Ohne jegliche Information mit realitätstreuen
-                    Mitteln und Methoden (Black Box)
+            <div
+              onClick={
+                isTentExpanded
+                  ? (e) => setTentExpanded(false)
+                  : (e) => setTentExpanded(true)
+              }
+            >
+              <h1 className="tent" style={{ marginTop: "0px" }}>
+                {t("pentest")}{" "}
+              </h1>
+              {!isTentExpanded && (
+                <>
+                  <span>{t("pen-short")}</span>
+                  <span className="mehr-button">
+                    <b>{t("mehr")}</b>
                   </span>
-                )}
-              </div>
+                </>
+              )}
+              {isTentExpanded && (
+                <span>
+                  {t("pen-text")}
+                  <br />
+                  {t("pen-p1")}
+                  <br />
+                  {t("pen-p2")}
+                  <br />
+                  {t("pen-p3")}
+                </span>
+              )}
+            </div>
             <Slide bottom>
               <div
                 onClick={
@@ -152,26 +123,21 @@ export default function Path(props) {
                     : (e) => setNetExpanded(true)
                 }
               >
-                <h1 className="net">Überprüfung von Netzwerken</h1>
+                <h1 className="net"> {t("uber")}</h1>
                 {!isNetExpanded && (
                   <>
                     <span>
-                      Überprüft werden unter anderem wie die Netzwerkstruktur
-                      aufgebaut...
+                      {t("uber-short")}
                     </span>
                     <span className="mehr-button">
-                      <solid>Mehr</solid>
+                      <solid>{t("mehr")}</solid>
                     </span>
                   </>
                 )}
 
                 {isNetExpanded && (
                   <span>
-                    Überprüft werden unter anderem wie die Netzwerkstruktur
-                    aufgebaut ist, ob es entsprechende Dokumentationen dazu gibt
-                    und wie beispielsweise die Rechte- und Zugriffsstrukturen
-                    sind. Dies sind nur einige wichtige Punkte die zu einem
-                    sichern Netzwerk beitragen.
+                   {t("uber-text")}
                   </span>
                 )}
               </div>
@@ -184,27 +150,20 @@ export default function Path(props) {
                     : (e) => setBuildExpanded(true)
                 }
               >
-                <h1 className="build">Gebäudesicherheit / Gebäudeautomation</h1>
+                <h1 className="build">{t("build")}</h1>
                 {!isBuildExpanded && (
                   <>
                     <span>
-                      Cybersicherheit beginnt in der physischen Welt. Jeder
-                      Server ist nur so...
+                    {t("build-short")}
                     </span>
                     <span className="mehr-button">
-                      <solid>Mehr</solid>
+                      <solid>{t("mehr")}</solid>
                     </span>
                   </>
                 )}
                 {isBuildExpanded && (
                   <span>
-                    Cybersicherheit beginnt in der physischen Welt. Jeder Server
-                    ist nur so sicher wie das Gebäude in dem er steht. Welche
-                    Zugänge hat das Gebäude? Werden nicht bekannte Menschen im
-                    Gebäude angesprochen wer Sie sind und was Sie möchten? Gibt
-                    es für den Gebäudezutritt Keykarten, Token oder
-                    Zahlenfelder? Dies sind nur einige der zu beachtenden
-                    Aspekte.
+                   {t("build-text")}
                   </span>
                 )}
               </div>{" "}
@@ -217,31 +176,24 @@ export default function Path(props) {
                     : (e) => setDataExpanded(true)
                 }
               >
-                <h1 className="data">Datensicherung und Wiederherstellung</h1>
+                <h1 className="data">{t("datensich")}</h1>
                 {!isDataExpanded && (
                   <>
                     <span>
-                      Backups zu erstellen ist wichtig, doch wie diese sicher
-                      aufbewahrt...
+                      {t("daten-short")}
                     </span>
                     <span className="mehr-button">
-                      <solid>Mehr</solid>
+                      <solid>{t("mehr")}</solid>
                     </span>
                   </>
                 )}
                 {isDataExpanded && (
                   <span>
-                    Backups zu erstellen ist wichtig, doch wie diese sicher
-                    aufbewahrt werden können ist ebenso bedeutend. Dies zu
-                    prüfen fällt in den Bereich der Datensicherung und
-                    Wiederherstellung. Es wird ebenfalls geprüft wie die
-                    Datensicherung im Unternehmen durchgeführt wird und ob
-                    beispielsweise Vorgaben zu Testwiederherstellungen der
-                    Backups bestehen.
+                 {t("daten-text")}
                   </span>
                 )}
-              </div>{" "}
-            </Slide>{" "}
+              </div>
+            </Slide>
             <Slide bottom>
               <div
                 style={{ marginBottom: "0px" }}
@@ -251,14 +203,14 @@ export default function Path(props) {
                     : (e) => setBoardExpanded(true)
                 }
               >
-                <h1 className="board">Mitarbeiterschulung</h1>
+                <h1 className="board">{t("mitarbait")}</h1>
                 {!isBoardExpanded && (
                   <>
                     <span>
-                      Mitarbeiterschulung sollen ein Problembewusstsein und...
+                      {t("mit-short")}
                     </span>
                     <span className="mehr-button">
-                      <solid>Mehr</solid>
+                      <solid>{t("mehr")}</solid>
                     </span>
                   </>
                 )}
@@ -276,14 +228,9 @@ export default function Path(props) {
                 : (e) => setBoardExpanded(true)
             }
           >
-            Mitarbeiterschulung sollen ein Problembewusstsein und entsprechendes
-            Verhalten der Mitarbeiter herstellen. Ein Bewusstsein für
-            Cybersicherheit zu entwickeln ist nur eines der Ziele. Diese können
-            durch Workshops oder Test-Software gut und nachhaltig vermittelt
-            werden.
+            {t("mit-text-1")}
             <br />
-            <br /> Bei Interesse kann außerdem ein Awarenesskonzept für das
-            Unternehmen entwickelt werden.
+            <br /> {t("mit-text-2")}
           </span>
         )}
       </div>

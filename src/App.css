@@ -82,6 +82,19 @@ nav li {
 .nav-img::before {
   display: none;
 }
+
+.lng-select,
+.lng-select:after,
+.lng-select:focus:after{
+  border: none;
+  background-color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+.lng-select-small{
+  display: none;
+  
+}
 .react-img {
   position: relative;
   width: 312px;
@@ -91,7 +104,9 @@ nav li {
   color: white;
   overflow-y: hidden;
 }
-
+.nav-but{
+  transform: translateX(50px);
+}
 .nav-img p,
 .react-img p {
   margin-top: 9px;
@@ -423,10 +438,7 @@ nav .menu-btn {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
-.box a,
-.kost-box a {
-  padding: 5px 24%;
-}
+
 .box > p::before,
 .vorort-text > p:before {
   display: inline-block;
@@ -447,6 +459,9 @@ nav .menu-btn {
 }
 .hide-button {
   display: none;
+}
+.box a{
+  width: 100%;
 }
 
 footer {
@@ -600,6 +615,17 @@ footer li::before {
     padding: 15px;
   }
 
+  .lng-select{
+    display: none;
+  }
+  .lng-select-small{
+    display: inline-block;
+    border: none;
+    background-color: white;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 12px;
+  }
   nav .menu-icon {
     cursor: pointer;
     float: right;

@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import Fade from "react-reveal/Fade";
+import { useTranslation } from "react-i18next";
 
 export default function Offers() {
+  const { t } = useTranslation()
   const [isVorortHidden, setIsVorortHidden] = useState(true);
   const [isCyberHidden, setIsCyberHidden] = useState(true);
   return (
@@ -12,85 +14,79 @@ export default function Offers() {
           <div className="box">
             <h1>Online Audit</h1>
             <h2>499€ netto*</h2>
-            <p>Pentest von Webanwendungen</p>
-            <p>Auditbericht mit Diskussion</p>
-            <p>Vorschlag zur Verbesserung der Sicherheitsmaßnahmen</p>
+            <p>{t("box1")}</p>
+            <p>{t("box2")}</p>
+            <p>{t("box3")}</p>
             <h2>
-              <strong>
-                <a href="mailto: office@wetog.de">Termin vereinbaren</a>
-              </strong>
+                <a href="mailto: office@wetog.de">{t("termin")}</a>
             </h2>
           </div>
         </Fade>{" "}
         <Fade top duration={2000} delay={200}>
           <div className="box">
-            <h1>Vorort Audit</h1>
+            <h1>{t("box4")}</h1>
             <h2>1499€ netto*</h2>
-            <p>Überprüfung von Netzwerken</p>
-            <p>Überprüfung Hardware und Infrastruktur</p>
-            <p>Datensicherung und -wiederherstellung</p>
+            <p>{t("box5")}</p>
+            <p>{t("box6")}</p>
+            <p>{t("box7")}</p>
             {isVorortHidden && (
               <span
                 className="hide-button"
                 onClick={(e) => setIsVorortHidden(!isVorortHidden)}
               >
-                Mehr Anzeigen
+                {t("mehr-anzeigen")}
               </span>
             )}
             {!isVorortHidden && (
               <>
-                <p>Authentifizierungs- und Zugangskontrollsystem</p>
-                <p>Rechte und Freigaben auf Daten</p>
-                <p>Auditbericht mit Diskussion</p>
-                <p>Vorschlag zur Verbesserung der Sicherheitsmaßnahmen</p>
+                <p>{t("box8")}</p>
+                <p>{t("box9")}</p>
+                <p>{t("box10")}</p>
+                <p>{t("box11")}</p>
               </>
             )}
             <span className="vorort-text">
-              <p>Authentifizierungs- und Zugangskontrollsystem</p>
-              <p>Rechte und Freigaben auf Daten</p>
-              <p>Auditbericht mit Diskussion</p>
-              <p>Vorschlag zur Verbesserung der Sicherheitsmaßnahmen</p>
+              <p>{t("box8")}</p>
+              <p>{t("box9")}</p>
+              <p>{t("box10")}</p>
+              <p>{t("box11")}</p>
             </span>
             <h2>
-              <strong>
-                <a href="mailto: office@wetog.de">Termin vereinbaren</a>
-              </strong>
+                <a href="mailto: office@wetog.de">{t("termin")}</a>
             </h2>
           </div>{" "}
         </Fade>{" "}
         <Fade top duration={2000} delay={400}>
           <div className="box">
-            <h1>Cybersecurity Komplettpaket</h1>
+            <h1>{t("box12")}</h1>
             <h2>2999€ netto*</h2>
-            <p>Online- und vor Ort Prüfungen</p>
-            <p>Pentest von Anwendungen und Betriebssysteme</p>
-            <p>Sicherheitsaudit Quellcode von Anwendungen</p>
+            <p>{t("box13")}</p>
+            <p>{t("box14")}</p>
+            <p>{t("box15")}</p>
             {isCyberHidden && (
               <div>
                 <span
                   className="hide-button"
                   onClick={(e) => setIsCyberHidden(!isCyberHidden)}
                 >
-                  Mehr Anzeigen
+                  {t("mehr-anzeigen")}
                 </span>
               </div>
             )}
             {!isCyberHidden && (
               <>
-                <p>Anwendungen und Systeme in der Cloud</p>
-                <p>Docker Sicherheit</p>
-                <p>Sicherheit Mobile Geräte sowie IoT-Geräte</p>
-                <p>Prüfung und Sicherung mobiler Geräte</p>
-                <p>Prüfung und Sicherung IoT-Geräten</p>
-                <p>Auditbericht mit Diskussion</p>
-                <p>Vorschläge zur Verbesserung der Sicherheit</p>
-                <p>Mitarbeiterschulung zur sicheren Fernarbeit</p>
+                <p>{t("box16")}</p>
+                <p>{t("box17")}</p>
+                <p>{t("box18")}</p>
+                <p>{t("box19")}</p>
+                <p>{t("box20")}</p>
+                <p>{t("box21")}</p>
+                <p>{t("box22")}</p>
+                <p>{t("box23")}</p>
               </>
             )}
             <h2>
-              <strong>
-                <a href="mailto: office@wetog.de">Termin vereinbaren</a>
-              </strong>
+                <a href="mailto: office@wetog.de">{t("termin")}</a>
             </h2>
           </div>
         </Fade>
@@ -98,15 +94,12 @@ export default function Offers() {
       <Fade top duration={2000}>
         <div className="kost-box__holder">
           <div className="kost-box">
-            <h1>Kostenfreies Vorgespräch</h1>
+            <h1>{t("box24")}</h1>
             <p>
-              Wir finden Ihr perfektes und individuelles Angebot. Vereinbaren
-              Sie jetzt ein kostenloses Vorgespräch.
+            {t("box25")}
             </p>
             <p>
-              <strong>
-                <a href="mailto: office@wetog.de">Termin vereinbaren</a>
-              </strong>
+                <a href="mailto: office@wetog.de">{t("termin")}</a>
             </p>
           </div>
         </div>
