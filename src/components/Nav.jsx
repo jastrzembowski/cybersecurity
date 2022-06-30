@@ -97,7 +97,7 @@ export default function Nav() {
 							onChange={handleLanguageChange}
 						>
 							<option value="en" >🇬🇧</option>
-              <option value="DE">	🇩🇪</option>
+              <option value="de">	🇩🇪</option>
 						</select>
         </ul>
       </nav>

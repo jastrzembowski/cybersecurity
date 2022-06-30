@@ -98,9 +98,9 @@ export default function Offers() {
             <p>
             {t("box25")}
             </p>
-            <p>
+            <h2>
                 <a href="mailto: office@wetog.de">{t("termin")}</a>
-            </p>
+            </h2>
           </div>
         </div>
       </Fade>

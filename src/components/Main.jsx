@@ -113,7 +113,7 @@ export default function Main() {
               </span>
               <a href="https://www.bmi.bund.de/SharedDocs/downloads/DE/publikationen/themen/it-digitalpolitik/bsi-lagebericht-cybersicherheit-2021.pdf?__blob=publicationFile&v=3">
                 <div className="main-button react-img">
-                  <a href="https://wetog-cybersecurity.com/downloads/10-GER.pdf">
+                  <a href={t("link")}>
                     {t("download")}{" "}
                   </a>
                 </div>
